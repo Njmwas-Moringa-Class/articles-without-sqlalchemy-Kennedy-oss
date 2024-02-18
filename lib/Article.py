@@ -2,10 +2,11 @@ class Article:
     _all_articles = []
 
     def __init__(self, author, magazine, title):
-        self._author = author
-        self._magazine = magazine
+        self._author = author  # Instance of Author
+        self._magazine = magazine  # Instance of Magazine
         self._title = title
         Article._all_articles.append(self)
+        author._articles.append(self)  # Ensure article is associated with the author upon instantiation
 
     @property
     def title(self):

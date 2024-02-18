@@ -5,7 +5,7 @@ class Author:
 
     def __init__(self, name):
         self._name = name
-        self._articles = []
+        self._articles = []  # List of Article instances
         Author._all_authors.append(self)
 
     @property
@@ -17,8 +17,7 @@ class Author:
         return self._articles
 
     def add_article(self, magazine, title):
-        article = Article(self, magazine, title)
-        self._articles.append(article)
+        article = Article(self, magazine, title)  # Article automatically adds itself to author's articles list
         return article
 
     @property
